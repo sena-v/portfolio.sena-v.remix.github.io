@@ -16,7 +16,7 @@ const styles = stylex.create({
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.8' }}>
+    <div>
       <h1 {...stylex.props(styles.title)}>Welcome to Remix (SPA Mode)</h1>
       <ul>
         <li>
@@ -34,6 +34,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <p {...stylex.props(styles.title)}>aaaaa</p>
     </div>
   )
 }
