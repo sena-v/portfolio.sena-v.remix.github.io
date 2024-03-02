@@ -1,5 +1,4 @@
 import type { MetaFunction } from '@remix-run/node'
-import stylex from '@stylexjs/stylex'
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,16 +7,10 @@ export const meta: MetaFunction = () => {
   ]
 }
 
-const styles = stylex.create({
-  title: {
-    color: '#55c500',
-  },
-})
-
 export default function Index() {
   return (
     <div>
-      <h1 {...stylex.props(styles.title)}>Welcome to Remix (SPA Mode)</h1>
+      <h1>Welcome to Remix (SPA Mode)</h1>
       <ul>
         <li>
           <a
@@ -34,7 +27,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <p {...stylex.props(styles.title)}>aaaaa</p>
+      <p>aaaaa</p>
     </div>
   )
 }
