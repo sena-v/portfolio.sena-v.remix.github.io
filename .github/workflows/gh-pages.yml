@@ -27,7 +27,7 @@ jobs:
       - name: Start server and download static content with wget
         run: |
           bun run dev &
-          sleep 10 &&
+          sleep 20 &&
           wget --mirror --directory-prefix=out --no-host-directories --page-requisites --adjust-extension --convert-links --no-parent http://localhost:5173
 
       - name: Deploy
