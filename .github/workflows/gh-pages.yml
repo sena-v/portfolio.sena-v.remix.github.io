@@ -15,15 +15,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1.1.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: install dependencies
-        run: bun install
+        run: npm ci
 
       - name: Start server and download static content with wget
         run: |
-          bun run dev &
+          npm run dev &
           sleep 10 &&
           wget --mirror --directory-prefix=out --no-host-directories --page-requisites --adjust-extension --convert-links --no-parent http://localhost:5173
 
