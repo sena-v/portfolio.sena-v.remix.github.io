@@ -18,37 +18,6 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-# jobs:
-#   build-deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
-
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: '20'
-
-#       - uses: oven-sh/setup-bun@v1
-#         with:
-#           bun-version: latest
-
-#       - name: install dependencies
-#         run: bun install
-
-#       - name: Start server and download static content with wget
-#         run: |
-#           bun run dev &
-#           sleep 20 &&
-#           wget --mirror --directory-prefix=out --no-host-directories --page-requisites --adjust-extension --convert-links --no-parent http://localhost:5173
-
-#       - name: Deploy
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./out
-
 jobs:
   deploy:
     environment:
