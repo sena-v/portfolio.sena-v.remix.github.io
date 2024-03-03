@@ -38,7 +38,7 @@ jobs:
         run: bun run build
 
       - name: move css to asset
-        run: cp ./app/output.css ./build/client/output.css
+        run: mkdir ./build/client/app; cp ./app/output.css ./build/client/app/output.css
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
