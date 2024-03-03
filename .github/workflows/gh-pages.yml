@@ -20,12 +20,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: install dependencies
-        run: npm ci
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
       - name: Start server and download static content with wget
         run: |
-          npm run dev &
+          bun run dev &
           sleep 10 &&
           wget --mirror --directory-prefix=out --no-host-directories --page-requisites --adjust-extension --convert-links --no-parent http://localhost:5173
 
