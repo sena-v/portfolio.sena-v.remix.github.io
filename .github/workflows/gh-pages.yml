@@ -24,6 +24,9 @@ jobs:
         with:
           bun-version: latest
 
+      - name: install dependencies
+        run: bun install
+
       - name: Start server and download static content with wget
         run: |
           bun run dev &
